@@ -1,6 +1,6 @@
 # dotfiles
 
-My personal configuration files managed with [chezmoi](https://www.chezmoi.io/).
+Aki543's configuration files managed with [chezmoi](https://www.chezmoi.io/).
 
 ## 🚀 Quick Start
 
