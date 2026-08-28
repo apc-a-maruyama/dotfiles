@@ -1,8 +1,33 @@
+local session_id = "nvim-" .. vim.fn.getpid()
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  callback = function()
+    vim.fn.system({ "tmux", "kill-session", "-t", session_id })
+  end,
+})
+
+local function toggle_tmux()
+  local cwd = vim.fn.getcwd()
+
+  Snacks.terminal.toggle({ "env", "-u", "TMUX", "tmux", "new-session", "-A", "-s", session_id, "-c", cwd }, {
+    cwd = cwd,
+    win = {
+      position = "bottom",
+      wo = { winbar = "" },
+    },
+  })
+end
+
 return {
   {
     "folke/snacks.nvim",
     opts = {
-      explorer = {},
+      explorer = { enabled = true },
+      terminal = { enabled = true },
+      lazygit = { enabled = false },
+    },
+    keys = {
+      { "<c-/>", toggle_tmux, mode = { "n", "t" }, desc = "Toggle Nested Tmux" },
+      { "<c-_>", toggle_tmux, mode = { "n", "t" }, desc = "which_key_ignore" },
     },
     init = function()
       vim.api.nvim_create_autocmd("QuitPre", {

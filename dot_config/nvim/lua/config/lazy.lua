@@ -29,6 +29,7 @@ require("lazy").setup({
 
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.ruby" },
+    { import = "lazyvim.plugins.extras.lang.nix" },
     -- { import = "lazyvim.plugins.extras.lang.terraform" },
     -- { import = "lazyvim.plugins.extras.lang.yaml" },
     -- { import = "lazyvim.plugins.extras.lang.docker" },
@@ -45,6 +46,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
   },
+  rocks = { enabled = false },
   lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
