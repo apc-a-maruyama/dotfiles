@@ -21,19 +21,31 @@ chezmoi add ~/.zshrc
 ### Edit an existing file
 
 ```bash
-chezmoi add ~/.zshrc
+chezmoi edit ~/.zshrc
 ```
 
 ### Apply changes
 
 ```bash
-chezmoi add ~/.zshrc
+chezmoi apply
 ```
 
 ### Check differences
 
 ```bash
 chezmoi add ~/.zshrc
+```
+
+### Stop tracking a file (Keep local file)
+
+```bash
+chezmoi delete ~/.zshrc
+```
+
+### Delete a file completely
+
+```bash
+chezmoi destroy ~/.zshrc
 ```
 
 ## Custom Directory Note
