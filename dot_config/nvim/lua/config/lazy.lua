@@ -30,10 +30,10 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.ruby" },
     { import = "lazyvim.plugins.extras.lang.nix" },
-    -- { import = "lazyvim.plugins.extras.lang.terraform" },
-    -- { import = "lazyvim.plugins.extras.lang.yaml" },
+    { import = "lazyvim.plugins.extras.lang.yaml" },
     -- { import = "lazyvim.plugins.extras.lang.docker" },
-    -- { import = "lazyvim.plugins.extras.lang.ansible" },
+    { import = "lazyvim.plugins.extras.lang.ansible" },
+    { import = "lazyvim.plugins.extras.lang.terraform" },
     -- { import = "lazyvim.plugins.extras.lang.toml" },
 
     -- { import = "lazyvim.plugins.extras.util.octo" },
@@ -42,6 +42,9 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.ui.smear-cursor" },
 
     { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+
+    -- { import = "lazyvim.plugins.extras.ai.copilot-chat" },
+    -- { import = "lazyvim.plugins.extras.ai.copilot" },
 
     -- import/override with your plugins
     { import = "plugins" },

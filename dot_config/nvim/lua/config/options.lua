@@ -2,7 +2,8 @@ vim.g.mapleader = " "
 
 -- UI
 vim.opt.number = true
-vim.opt.title = true
+-- vim.opt.title = true
+-- vim.opt.titlestring = "%t"
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
 vim.opt.scrolloff = 10
@@ -61,6 +62,13 @@ vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.shell = "zsh"
 
 --- Clipboard
+local ps = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString().Replace("`r", ""))'
 vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = {
+  name = "WslClipboard",
+  copy = { ["+"] = "clip.exe", ["*"] = "clip.exe" },
+  paste = { ["+"] = ps, ["*"] = ps },
+  cache_enabled = 0,
+}
 
 vim.g.lazyvim_picker = "snacks"
